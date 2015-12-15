@@ -1,0 +1,2 @@
+# Algoritamske-heuristike
+Uradjeni domaci
