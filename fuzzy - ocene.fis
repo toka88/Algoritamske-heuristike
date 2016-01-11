@@ -1,0 +1,60 @@
+[System]
+Name='fuzzy - ocene'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=16
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='bodovi'
+Range=[0 100]
+NumMFs=6
+MF1='nezadovoljavajuce':'gauss2mf',[6.79 -2 4.81 48.7559794772093]
+MF2='vrloDobro':'gauss2mf',[3.03 89.3297019527235 3.43 90.9297019527235]
+MF3='dobro':'gauss2mf',[3.03 78.7438848920863 3.43 80.3438848920863]
+MF4='dovoljno':'gauss2mf',[3.03 59.1480472764645 3.43 60.7180472764645]
+MF5='prilicno_dobro':'gauss2mf',[3.03 68.4277492291881 3.43 70.0277492291881]
+MF6='odlicno':'gauss2mf',[4.29 99.2443058516788 6.79 102]
+
+[Input2]
+Name='vezbe'
+Range=[0 10]
+NumMFs=3
+MF1='nizuUradjene':'gauss2mf',[1.38 0 1.03488818302324 2.19424460431655]
+MF2='zadovoljavajuce':'gauss2mf',[0.961 4.36 0.997 6.34410781906286]
+MF3='odlicno':'gauss2mf',[0.975890853520373 8.72045220966084 1.7 10.5]
+
+[Output1]
+Name='ocena'
+Range=[0 10]
+NumMFs=6
+MF1='nijePolozio':'trimf',[0 5 5.6]
+MF2='sestica':'trimf',[5.4 6 6.6]
+MF3='sedmica':'trimf',[6.4 7 7.6]
+MF4='osmica':'trimf',[7.4 8 8.6]
+MF5='devetka':'trimf',[8.41212744090442 9.01 9.51]
+MF6='desetka':'trimf',[9.4 10 12]
+
+[Rules]
+1 0, 1 (1) : 1
+4 1, 1 (1) : 1
+4 2, 2 (1) : 1
+4 3, 3 (1) : 1
+5 1, 1 (1) : 1
+5 2, 3 (1) : 1
+5 3, 3 (1) : 1
+3 1, 1 (1) : 1
+3 2, 4 (1) : 1
+3 3, 4 (1) : 1
+2 2, 5 (1) : 1
+2 3, 5 (1) : 1
+2 1, 2 (1) : 1
+6 1, 3 (1) : 1
+6 2, 5 (1) : 1
+6 3, 6 (1) : 1
